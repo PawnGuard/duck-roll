@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DuckStore - Ofertas y Tecnología</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #e3e6e6; color: #0f1111; }
+        header { background-color: #131921; color: white; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 24px; font-weight: 800; color: #ff9900; letter-spacing: -0.5px; }
+        .logo span { color: white; }
+        .search-bar { flex-grow: 1; max-width: 600px; margin: 0 30px; display: flex; }
+        .search-bar input { width: 100%; padding: 10px 14px; border: none; border-radius: 4px 0 0 4px; font-size: 14px; outline: none; }
+        .search-bar button { background-color: #febd69; border: none; padding: 10px 18px; border-radius: 0 4px 4px 0; cursor: pointer; font-size: 16px; }
+        .nav-tools { display: flex; gap: 24px; font-size: 13px; align-items: center; }
+        .hero-banner { background: linear-gradient(135deg, #232f3e 0%, #37475a 100%); color: white; padding: 40px 20px 80px 20px; text-align: center; }
+        .hero-banner h1 { font-size: 28px; margin-bottom: 8px; }
+        .hero-banner p { color: #febd69; font-weight: 600; }
+        .container { max-width: 1200px; margin: -50px auto 40px auto; padding: 0 20px; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .card { background: white; border-radius: 8px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-4px); }
+        .product-img { width: 100%; height: 180px; display: flex; align-items: center; justify-content: center; background: #f7f8f8; border-radius: 6px; margin-bottom: 16px; }
+        .product-img svg { width: 110px; height: 110px; }
+        .badge { background: #cc0c39; color: white; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 8px; border-radius: 3px; width: max-content; margin-bottom: 10px; }
+        .card h3 { font-size: 16px; font-weight: 600; line-height: 1.3; margin-bottom: 12px; height: 42px; overflow: hidden; }
+        .price { font-size: 22px; font-weight: 800; color: #0f1111; margin-bottom: 16px; }
+        .price span { font-size: 12px; color: #565959; font-weight: normal; }
+        .btn-add { background: #ffd814; border: 1px solid #fcd200; border-radius: 20px; padding: 10px; font-weight: 700; cursor: pointer; text-align: center; width: 100%; transition: background 0.15s; }
+        .btn-add:hover { background: #f7ca00; }
+        .newsletter { background: white; margin-top: 32px; padding: 32px; border-radius: 8px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .newsletter h3 { font-size: 20px; margin-bottom: 8px; }
+        .newsletter p { color: #565959; font-size: 14px; margin-bottom: 20px; }
+        .form-group { display: flex; justify-content: center; gap: 10px; max-width: 450px; margin: 0 auto; }
+        .form-group input[type="email"] { padding: 10px 14px; width: 100%; border: 1px solid #888c8c; border-radius: 4px; outline: none; }
+        .form-group button { width: auto; padding: 10px 24px; border-radius: 4px; }
+        footer { background-color: #131921; color: #ddd; padding: 40px 20px; margin-top: 60px; text-align: center; font-size: 13px; border-top: 4px solid #ff9900; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Duck<span>Store</span> 🦆</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos, marcas y más en DuckStore...">
+            <button>🔍</button>
+        </div>
+        <div class="nav-tools">
+            <div>Hola, Identifícate<br><strong>Cuenta y Listas</strong></div>
+            <div>🛒 <strong>Carrito (0)</strong></div>
+        </div>
+    </header>
+
+    <div class="hero-banner">
+        <h1>Gran Venta Anual DuckStore 2026</h1>
+        <p>Aprovecha hasta 40% de descuento en periféricos e instrumental de depuración</p>
+    </div>
+
+    <div class="container">
+        <div class="products-grid">
+            <div class="card">
+                <div>
+                    <span class="badge">Más vendido</span>
+                    <div class="product-img">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <path d="M12 36C12 24.9543 20.9543 16 32 16C43.0457 16 52 24.9543 52 36C52 42.6274 46.6274 48 40 48H24C17.3726 48 12 42.6274 12 36Z" fill="#FFD700"/>
+                            <circle cx="38" cy="28" r="4" fill="#000000"/>
+                            <path d="M44 32C48 32 54 34 52 38C50 42 44 38 44 35Z" fill="#FF4500"/>
+                        </svg>
+                    </div>
+                    <h3>Pato de Goma Clásico de Depuración</h3>
+                    <div class="price">$199.00 <span>MXN</span></div>
+                </div>
+                <button class="btn-add">Agregar al carrito</button>
+            </div>
+
+            <!-- 
+                ====================================================
+                [PUERTA SECRETA 1 / CTF FLAG]
+                ¡Felicidades Hacker! Has encontrado la primera puerta inspeccionando los comentarios del DOM.
+                FLAG 1: FLAG{1_hidden_in_html_comments_2026}
+                ====================================================
+            -->
+
+            <div class="card">
+                <div>
+                    <span class="badge">Oferta del día</span>
+                    <div class="product-img">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <rect x="8" y="20" width="48" height="24" rx="4" fill="#2D3748"/>
+                            <rect x="12" y="24" width="6" height="6" rx="1" fill="#4FD1C5"/>
+                            <rect x="20" y="24" width="6" height="6" rx="1" fill="#febd69"/>
+                            <rect x="28" y="24" width="6" height="6" rx="1" fill="#4FD1C5"/>
+                            <rect x="36" y="24" width="6" height="6" rx="1" fill="#febd69"/>
+                            <rect x="44" y="24" width="6" height="6" rx="1" fill="#4FD1C5"/>
+                            <rect x="18" y="34" width="28" height="6" rx="1" fill="#E2E8F0"/>
+                        </svg>
+                    </div>
+                    <h3>Teclado Mecánico RGB DuckHacker Edition</h3>
+                    <div class="price">$899.00 <span>MXN</span></div>
+                </div>
+                <button class="btn-add">Agregar al carrito</button>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="product-img">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <path d="M22 16C22 11.5817 25.5817 8 30 8H34C38.4183 8 42 11.5817 42 16V40C42 48.8366 34.8366 56 26 56C23.7909 56 22 54.2091 22 52V16Z" fill="#4A5568"/>
+                            <path d="M32 8V20" stroke="#CBD5E0" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Mouse Óptico Ergonómico 3200 DPI</h3>
+                    <div class="price">$349.00 <span>MXN</span></div>
+                </div>
+                <button class="btn-add">Agregar al carrito</button>
+            </div>
+        </div>
+
+        <div class="newsletter">
+            <h3>Obtén $100 MXN de descuento en tu primera compra</h3>
+            <p>Suscríbete a nuestro boletín para recibir promociones exclusivas.</p>
+            <form class="form-group" onsubmit="event.preventDefault(); alert('¡Suscrito con éxito!');">
+                <input type="email" placeholder="Tu correo electrónico..." required>
+                <!-- PUERTA SECRETA 2 / CTF FLAG -->
+                <input type="hidden" name="promo_code_debug" value="FLAG{2_hidden_input_field_discount_2026}">
+                <button class="btn-add" type="submit">Suscribirme</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 DuckStore.com, Inc. o sus filiales. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // PUERTA SECRETA 3 / CTF FLAG
+        const config = {
+            env: "production",
+            hidden_admin_vault: "FLAG{3_js_config_endpoint_exposed_2026}"
+        };
+    </script>
+</body>
+</html>
