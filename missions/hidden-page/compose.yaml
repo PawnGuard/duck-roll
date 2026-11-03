@@ -1,0 +1,18 @@
+services:
+  hidden-page:
+    build: .
+    container_name: duckhunt-hidden-page
+    restart: unless-stopped
+    ports:
+      - "${LAB_HOST_IP:-127.0.0.1}:8080:80"
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 256m
+    cpus: 0.50
+    tmpfs:
+      - /var/cache/nginx
+      - /var/run
+      - /tmp
