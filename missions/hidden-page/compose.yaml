@@ -1,0 +1,21 @@
+services:
+  hidden-page:
+    build: .
+    container_name: duckhunt-hidden-page
+    restart: unless-stopped
+    user: "101:101"
+    command: ["nginx", "-g", "daemon off;"]
+    ports:
+      - "8080:80"
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 256m
+    cpus: 0.50
+    tmpfs:
+      - /var/cache/nginx:uid=101,gid=101,mode=0777
+      - /var/run:uid=101,gid=101,mode=0777
+      - /var/log/nginx:uid=101,gid=101,mode=0777
+      - /tmp:uid=101,gid=101,mode=0777
