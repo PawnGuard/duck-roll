@@ -1,0 +1,27 @@
+services:
+  ssh:
+    build:
+      context: .
+      args:
+        IMAGE_TAG: "3.20.3"
+    container_name: duckhunt-hydras-trial
+    restart: unless-stopped
+    ports:
+      - "${LAB_HOST_IP:?Set LAB_HOST_IP in .env}:2222:22"
+    environment:
+      HYDRAS_FLAG: "${HYDRAS_FLAG:?Set HYDRAS_FLAG in .env}"
+      OPERATOR_PUBLIC_KEY: "${OPERATOR_PUBLIC_KEY:?Set OPERATOR_PUBLIC_KEY in .env}"
+    tmpfs:
+      - /run
+      - /tmp
+      - /home/hydra
+      - /home/operator/.ssh
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 256m
+    cpus: 0.50
+    healthcheck:
+      test: ["CMD", "sshd", "-t"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
