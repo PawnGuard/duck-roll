@@ -1,2 +1,4 @@
 .env
 organizer/flag.txt
+organizer/support-staff.htpasswd
+organizer/support-staff-credentials.txt

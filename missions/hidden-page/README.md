@@ -1,24 +1,30 @@
 # Hidden Page — briefing para participantes
 
-El portal de avisos del ficticio Refugio Pato se usa durante un simulacro local
-de continuidad operativa. Una nota de práctica no debería estar disponible para
-visitantes sin autorización.
+### Situación
 
-## Objetivos
+El Support Center de AURELION Technologies usa un dashboard interno para seguir
+incidentes activos de clientes. El equipo asumió que la página estaría protegida
+porque no aparecía enlazada desde el sitio; incluso pidió a los buscadores que
+no la indexaran. Eso no impide que alguien la visite.
 
-- **Atacante:** investiga el servicio HTTP de la instancia que te asignaron y
-  entrega al organizador la bandera del laboratorio si encuentras la nota.
-- **Defensor:** identifica la solicitud en los registros, restringe el recurso
-  expuesto y comprueba que la página pública siga funcionando.
+## Misión
 
-## Alcance y pista
+- **Atacante:** investiga el sitio web de la instancia que te asignaron, localiza
+  el dashboard y revisa sus registros de incidentes. Si encuentras la bandera,
+  dila verbalmente al organizador para que la valide.
+- **Defensor:** detecta la actividad en los registros, protege `/internal/` con
+  autenticación real y demuestra que el acceso sin credenciales queda bloqueado
+  mientras el personal de soporte aún puede usar el dashboard.
 
-Usa únicamente el host y puerto que te asignaron en la red aislada del taller.
-La pista inicial se entrega mediante el perfil HID preparado; si el dispositivo
-no funciona, el organizador puede proporcionar la misma pista manualmente:
+## Alcance
 
-> Revisa las reglas públicas de indexación del portal asignado.
+Trabaja solo contra la IP y el puerto de tu pareja, dentro de la red aislada del
+taller. El perfil HID de esta misión solo comunica al receptor del atacante el
+hostname, la IP local, el usuario, el nombre del sistema operativo y
+`mission_id=hidden-page`. Si el dispositivo falla, pide al organizador que te
+confirme manualmente el host asignado. No recopiles otros datos del equipo del
+defensor, no uses credenciales reales y no pruebes otras parejas.
 
-No uses credenciales reales, no pruebes otros equipos y no cambies el sistema
-anfitrión. La victoria defensiva requiere demostrar la mitigación y verificar
-el servicio legítimo.
+La entrada que encuentres no es un portal de envío: comunica la bandera al
+organizador en persona. Quitar una ruta de `robots.txt` sin proteger el recurso
+no cuenta como mitigación.
